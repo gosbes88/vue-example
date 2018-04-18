@@ -1,0 +1,25 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.0938 20.625">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #feb868;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #feb868;
+        stroke-width: 0.5px;
+      }
+    </style>
+  </defs>
+  <title>status-yellow</title>
+  <polygon class="cls-1" points="0.542 0.5 17.583 0.5 17.583 16.434 9.125 20.073 0.542 16.319 0.542 0.5"/>
+  <g id="Layer_4" data-name="Layer 4">
+    <polygon class="cls-2" points="9.125 16.484 14.09 13.567 14.09 11.508 9.125 14.519 4.172 11.508 4.172 13.531 9.125 16.484"/>
+    <polygon class="cls-2" points="9.125 12.484 14.09 9.567 14.09 7.508 9.125 10.519 4.172 7.508 4.172 9.531 9.125 12.484"/>
+  </g>
+</svg>

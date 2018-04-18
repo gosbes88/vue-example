@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.5 9">
+    <defs>
+        <style>
+            .sort-rating {
+                fill: #73af2e;
+            }
+        </style>
+    </defs>
+
+    <path class="sort-rating" d="M0,5.25H9V3.75H0ZM0,1.5H13.5V0H0ZM0,9H4.5V7.5H0Z"/>
+</svg>

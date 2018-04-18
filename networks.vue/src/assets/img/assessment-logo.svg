@@ -1,0 +1,24 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 250">
+    <defs>
+        <style>
+            .logo_asm {
+                fill-rule: evenodd;
+                fill: #92d050;
+                fill-opacity: 1;
+                stroke-width: 3;
+                stroke-linecap: butt;
+                stroke-linejoin: miter;
+                stroke: #fff;
+                stroke-opacity: 1;
+                stroke-miterlimit: 10;
+            }
+        </style>
+    </defs>
+    <g>
+        <path class="logo_asm" d="M 66.898438 390.421875 L 66.898438 455.640625 L 143.460938 520.859375 L 220.019531 455.640625 L 220.019531 390.421875 L 143.460938 455.640625 Z M 66.898438 390.421875 " transform="matrix(1,0,0,-1,0,540)"/>
+        <path class="logo_asm" d="M 86.699219 369.179688 L 143.398438 419.21875 L 200.101562 369.179688 Z M 86.699219 369.179688 " transform="matrix(1,0,0,-1,0,540)"/>
+        <path class="logo_asm" d="M 140.578125 350.339844 L 83.878906 300.179688 L 27.179688 350.339844 Z M 140.578125 350.339844 " transform="matrix(1,0,0,-1,0,540)"/>
+        <path class="logo_asm" d="M 263.460938 351.058594 L 206.761719 300.898438 L 150.058594 351.058594 Z M 263.460938 351.058594 " transform="matrix(1,0,0,-1,0,540)"/>
+    </g>
+</svg>

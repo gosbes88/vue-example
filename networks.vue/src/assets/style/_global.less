@@ -1,0 +1,381 @@
+// --------------------------------------------------
+// Import
+// Global
+// --------------------------------------------------
+
+@badgeTextColor: #fff;
+@badgeBg: #ba5455;
+@badgeSize: 17px;
+@progressTextColor: #585858;
+@bodyTextColor: #000;
+@lineBgLight: #ddd;
+
+@containerIndent: 30px;
+
+// mixins
+.mixinPageWidth() {
+    width: ~"calc(@{pageMinWidth} - @{containerIndent} * 2 )";
+}
+
+.mixinPageMinWidth() {
+    min-width: ~"calc(@{pageMinWidth} - @{containerIndent} * 2 )";
+}
+
+.mixinBlockAnim(@value: all ease-in-out 350ms) {
+    -webkit-transition: @value;
+    transition: @value;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    outline: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: @bodyTextColor;
+}
+
+button {
+    padding: inherit;
+    cursor: pointer;
+}
+
+//noinspection ALL
+.page-section {
+    .flex-display();
+    .flex-direction(column);
+
+    min-height: 100%;
+}
+
+//noinspection ALL
+.main-wrap {
+    .flex(1 0 auto);
+}
+
+.header-wrap,
+.footer-wrap {
+    .flex(0 0 auto);
+}
+
+.container-small {
+    width: @pageWidthSmall;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-default {
+    .mixinPageWidth();
+
+    padding-left: @containerIndent;
+    padding-right: @containerIndent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+// цвет выделенного текста
+
+.line-horizontal {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed @lightGray;
+}
+
+.line-horizontal--solid {
+    border-bottom-style: solid;
+}
+
+.line-horizontal-2 {
+    width: 100%;
+    height: 2px;
+    background: @lineBgLight;
+    border-radius: 50%;
+}
+
+.center-block {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// margin top 10-50px (margin-top from 10px to 50px)
+.generateMarginTop(@n, @i: 1) when (@i =< @n) {
+    .mt-@{i} {
+        margin-top: (@i * 10px);
+    }
+    .generateMarginTop(@n, (@i + 1));
+}
+
+.generateMarginTop(10) !important;
+
+// margin bottom 10-50px (margin-bottom from 10px to 50px)
+.generateMarginBottom(@n, @i: 1) when (@i =< @n) {
+    .mb-@{i} {
+        margin-bottom: (@i * 10px);
+    }
+    .generateMarginBottom(@n, (@i + 1));
+}
+
+.generateMarginBottom(6) !important;
+
+// margin left 10-50px (margin-left from 10px to 50px)
+.generateMarginLeft(@n, @i: 1) when (@i =< @n) {
+    .ml-@{i} {
+        margin-left: (@i * 10px);
+    }
+    .generateMarginLeft(@n, (@i + 1));
+}
+
+.generateMarginLeft(5) !important;
+
+// margin right 10-50px (margin-right from 10px to 50px)
+.generateMarginRight(@n, @i: 1) when (@i =< @n) {
+    .mr-@{i} {
+        margin-right: (@i * 10px);
+    }
+    .generateMarginRight(@n, (@i + 1));
+}
+
+.generateMarginRight(5) !important;
+
+// width 400-800px (width from 400px to 800px)
+.generateWidth(@n) when (@n > 0) {
+    .wd-@{n} {
+        width: (@n * 100px + 300px)
+    }
+    .generateWidth(@n - 1);
+}
+
+.generateWidth(5) !important;
+
+// max-width 300-700px (max-width from 300px to 700px)
+.generateMaxWidth(@n) when (@n > 0) {
+    .mwd-@{n} {
+        max-width: (@n * 100px + 200px)
+    }
+    .generateMaxWidth(@n - 1);
+}
+
+.generateMaxWidth(5) !important;
+
+.hide-show-wrap {
+    position: relative;
+}
+
+.hide-animation {
+    display: none;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+
+    -webkit-transition: all ease-in-out 180ms;
+    transition: all ease-in-out 180ms;
+}
+
+.hide-animation-2 {
+    &:extend(.hide-animation);
+
+    display: inherit;
+}
+
+.show-animation {
+    &:extend(.hide-animation);
+
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.show-animation-2 {
+    &:extend(.show-animation);
+
+    display: inherit;
+}
+
+.hide-animation-no-absolute {
+    &:extend(.hide-animation);
+
+    position: inherit;
+}
+
+.show-animation-no-absolute {
+    &:extend(.show-animation);
+
+    position: inherit;
+}
+
+.hide-anim {
+    visibility: hidden;
+    opacity: 0;
+
+    .mixinBlockAnim();
+}
+
+.show-anim {
+    visibility: visible;
+    opacity: 1;
+
+    .mixinBlockAnim();
+}
+
+.sort-wrap {
+    display: inline-block;
+    cursor: pointer;
+
+    .user-select(none);
+}
+
+.transition {
+    .mixinBlockAnim();
+}
+
+.no-page-scroll {
+    overflow: hidden;
+}
+
+.avatar-default {
+    width: 38px;
+    height: 38px;
+    display: inline-block;
+    background: url("@{images}/avatar-default.png");
+}
+
+.min-block-container {
+    min-width: @pageMinWidthMax;
+
+    // media tablet
+    @media (max-width: @tablet) {
+        min-width: @tabletWidth;
+    }
+}
+
+.none {
+    display: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.badge {
+    min-width: @badgeSize;
+    height: @badgeSize;
+    padding: 4px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    color: @badgeTextColor;
+    background: @badgeBg;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.circular-progress-bar {
+    position: relative;
+    margin: 0 auto;
+}
+
+.progress-percentage, .progress-text {
+    position: absolute;
+    width: 100%;
+    top: 203%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 60px;
+}
+
+.progress-percentage {
+    font-size: 18px;
+    font-weight: 700;
+    transform: translate(-50%, -85%);
+}
+
+.progress-text {
+    transform: translate(-50%, 0%);
+    color: @progressTextColor;
+    font-size: 18px;
+}
+
+// блок подсказка
+.tip-help {
+    position: relative;
+    display: inline-block;
+
+    &__arrow {
+        .rotate(45deg);
+
+        position: absolute;
+        top: -8px;
+        left: ~"calc(100%/2 - 7.5px)";
+        width: 15px;
+        height: 15px;
+        border-left: 1px solid @brColor;
+        border-top: 1px solid @brColor;
+        background: @bgLight;
+    }
+
+    &__content {
+        position: absolute;
+        z-index: 99;
+        width: 300px;
+        margin-top: 3px;
+        padding: 15px 20px;
+        border: 1px solid @brColor;
+        font-size: 12px;
+        border-radius: 8px;
+        background: @bgLight;
+        text-align: left;
+        font-weight: normal;
+        box-shadow: 0 4px 16px rgba(0,0,0, .3);
+    }
+
+    &__row {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}

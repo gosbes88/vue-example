@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.01 49.48">
+    <defs>
+        <style>
+            .employee-selection-1 { fill: #6fbe10; }
+            .employee-selection-2 {
+                fill: none;
+                stroke: #fffffe;
+                stroke-width: 2.5px;
+            }
+        </style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+        <path class="employee-selection-1"
+              d="M21,45.32,45.72,3.13l1.11-1.88H41l-.37.49L19.79,29.15l-8.66-9.31-.37-.4H2.28l1.23,1.92,15.32,24,1.1,1.72Z"/>
+        <path class="employee-selection-2"
+              d="M21,45.32,45.72,3.13l1.11-1.88H41l-.37.49L19.79,29.15l-8.66-9.31-.37-.4H2.28l1.23,1.92,15.32,24,1.1,1.72Z"/>
+    </g>
+</svg>

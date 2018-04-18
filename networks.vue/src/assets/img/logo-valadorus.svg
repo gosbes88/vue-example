@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 229.56 221.04">
+    <defs>
+        <style>.logo_valadorus { fill: #4273cd; fill-rule: evenodd; }</style>
+    </defs>
+    <g>
+        <polygon class="logo_valadorus" points="153 90.72 153 155.88 76.5 221.04 0 155.88 0 90.72 76.5 155.88 153 90.72"/>
+        <polygon class="logo_valadorus" points="76.56 130.32 76.56 65.16 153.06 0 229.56 65.16 229.56 130.32 153.06 65.16 76.56 130.32"/>
+        <polygon class="logo_valadorus" points="116.16 221.04 172.86 171 229.56 221.04 116.16 221.04"/>
+        <polygon class="logo_valadorus" points="113.4 0 56.7 50.04 0 0 113.4 0"/>
+    </g>
+</svg>

@@ -1,0 +1,447 @@
+// --------------------------------------------------
+// Import
+// Mixins
+// --------------------------------------------------
+
+.vertical-gradient (@startColor: #eee, @endColor: #ddd) {
+    background-color: @startColor;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor);
+}
+
+.hint-bg(@startColor: #fefefe, @endColor: #e6e7f1) {
+    background: @startColor;
+    background: -moz-linear-gradient(top, @startColor 0%,@endColor 100%);
+    background: -webkit-linear-gradient(top, @startColor 0%,@endColor 100%);
+    background: linear-gradient(to bottom, @startColor 0%,@endColor 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e6e7f1',GradientType=0 );
+}
+
+.rotate(@deg) {
+    -webkit-transform: rotate(@deg);
+    -ms-transform: rotate(@deg);
+    transform: rotate(@deg);
+}
+
+.translate(@value) {
+    -webkit-transform: translate(@value);
+    -ms-transform: translate(@value);
+    transform: translate(@value);
+}
+
+.translateY(@value) {
+    -webkit-transform: translateY(@value);
+    -ms-transform: translateY(@value);
+    transform: translateY(@value);
+}
+
+.translateX(@value) {
+    -webkit-transform: translateX(@value);
+    -ms-transform: translateX(@value);
+    transform: translateX(@value);
+}
+
+// scale
+.scale(@value) {
+    -webkit-transform: scale(@value);
+    -ms-transform: scale(@value);
+    transform: scale(@value);
+}
+
+.center-block-absolute() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.center-block-fixed() {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.center-block() {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clearfix() {
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.disabled() {
+    pointer-events: none;
+    cursor: default;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.transform(@string){
+    -webkit-transform: @string;
+    -ms-transform: @string;
+    transform: @string;
+}
+
+.user-select(@value) {
+    -webkit-user-select: @value;
+    -moz-user-select: @value;
+    -ms-user-select: @value;
+    user-select: @value;
+}
+
+.effect-blur(@value) {
+    filter: blur(10px);
+    -webkit-filter: blur(@value);
+    -moz-filter: blur(@value);
+    -o-filter: blur(@value);
+    -ms-filter: blur(@value);
+    filter: url(#blur);
+    filter: e("progid:DXImageTransform.Microsoft.Blur(PixelRadius='@value')");
+}
+
+.center-position() {
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.multiline(@row: 2) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @row;
+}
+
+.multiline-text(@font-size, @line-height, @lines-to-show) {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: @font-size*@line-height*@lines-to-show;
+    margin: 0 auto;
+    font-size: @font-size;
+    line-height: @line-height;
+    -webkit-line-clamp: @lines-to-show;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-overflow() {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.scrollbar() {
+    &::-webkit-scrollbar {
+        width: 6px;
+        border-radius: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: @gray;
+        border-radius: 0;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb:horizontal {
+        background: @gray;
+        border-radius: 0;
+    }
+
+    -webkit-overflow-scrolling: touch;
+}
+
+// скролл в селектах
+.mixinSelectScroll(@sizeScroll: 12px) {
+    &::-webkit-scrollbar {
+        width: @sizeScroll;
+        border-radius: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: -moz-linear-gradient(left, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+        background: -webkit-linear-gradient(left, rgba(255,255,255,1) 49%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+        background: linear-gradient(to right, rgba(153,153,153,1) 20%,rgba(153,153,153,1) 40%,rgba(153,153,153,0) 40%);
+    }
+
+    -webkit-overflow-scrolling: touch;
+}
+
+// color change from icons - смена цвета у иконки при наведении курсора
+.icon-color-change() {
+    -webkit-transition: color ease 300ms;
+    transition: color ease 300ms;
+
+    &:hover {
+        color: @black;
+    }
+}
+
+// иконка закрытия &times;
+.close-icon {
+    display: inline-block;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 0;
+    color: @lightGray;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-transition: all ease-in-out 350ms;
+    transition: all ease-in-out 350ms;
+    will-change: transform;
+
+    &:hover,
+    &:focus {
+        color: @black;
+
+        .rotate(-90deg);
+    }
+}
+
+// sticky
+.sticky(@position: sticky; @top: 0) {
+    position: ~"-webkit-@{position}";
+    position: sticky;
+
+    top: @top;
+}
+
+.mixinOrganizationWidth() {
+    min-width: ~"calc(@{pageMinWidth} - 30px * 2 - @{organizationAsideMinWidth})";
+}
+
+.flex-display(@display: flex) {
+    display: ~"-webkit-@{display}";
+    display: ~"-ms-@{display}box";
+    display: ~"-ms-@{display}";
+    display: @display;
+}
+
+.flex(@columns: initial) {
+    -webkit-flex: @columns;
+    -ms-flex: @columns;
+    flex: @columns;
+}
+
+.flex-direction(@direction: row) {
+    -webkit-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
+}
+
+.flex-wrap(@wrap: nowrap) {
+    -webkit-flex-wrap: @wrap;
+    -ms-flex-wrap: @wrap;
+    flex-wrap: @wrap;
+}
+
+.flex-flow(@flow) {
+    -webkit-flex-flow: @flow;
+    -ms-flex-flow: @flow;
+    flex-flow: @flow;
+}
+
+.flex-order(@order: 0) {
+    -webkit-order: @order;
+    -ms-order: @order;
+    order: @order;
+}
+
+.flex-grow(@grow: 0) {
+    -webkit-flex-grow: @grow;
+    -ms-flex-grow: @grow;
+    flex-grow: @grow;
+}
+
+.flex-shrink(@shrink: 1) {
+    -webkit-flex-shrink: @shrink;
+    -ms-flex-shrink: @shrink;
+    flex-shrink: @shrink;
+}
+
+.flex-basis(@width: auto) {
+    -webkit-flex-basis: @width;
+    -ms-flex-basis: @width;
+    flex-basis: @width;
+}
+
+.justify-content(@justify: flex-start) {
+    -webkit-justify-content: @justify;
+    -ms-justify-content: @justify;
+    justify-content: @justify;
+}
+
+.align-content(@align: stretch) {
+    -webkit-align-content: @align;
+    -ms-align-content: @align;
+    align-content: @align;
+}
+
+.align-items(@align: stretch) {
+    -webkit-align-items: @align;
+    -ms-align-items: @align;
+    align-items: @align;
+}
+
+.align-self(@align: auto) {
+    -webkit-align-self: @align;
+    -ms-align-self: @align;
+    align-self: @align;
+}
+
+.mixin-display-flex() {
+    .flex-display();
+}
+
+.mixin-flex(@value) {
+    -webkit-box-flex: @value;
+    -webkit-flex:  @value;
+    -ms-flex:  @value;
+    flex:  @value;
+}
+
+.center-flex {
+    .mixin-display-flex();
+
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+
+    flex-flow: row wrap;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+// нижняя стрелка .mixinTooltipArrow(); - по умолчанию стоит
+// верхняя стрелка .mixinTooltipArrow(16px, top, left, top);
+
+// стрелка в тултипе
+.mixinTooltipArrow(@arrowSize: 18px; @side: bottom; @brLine1: bottom; @brLine2: right; ) {
+    position: absolute;
+    left: ~"calc(100%/2 - @{arrowSize}/2)";
+    @{side}: ~"calc(-@{arrowSize}/2)";
+
+    background: @bgLight;
+    border-@{brLine1}: 1px solid @brColor;
+    border-@{brLine2}: 1px solid @brColor;
+    width: @arrowSize;
+    height: @arrowSize;
+
+    .rotate(45deg);
+}
+
+// базовая заготовка отображения тултипа
+.mixinTooltipContent(@padding: 20px; @boxShadow: 22px; @boxShadowY: 0; @borderRadius: 12px) {
+    position: absolute;
+    z-index: 99;
+    padding: @padding;
+    border: 1px solid @brColor;
+    background: @bgLight;
+    border-radius: @borderRadius;
+    box-shadow: 0 @boxShadowY @boxShadow rgba(0,0,0, .3);
+}
+
+// микшин для ширины колонки в таблице
+.mixinTableWidth(@width) {
+    width: @width;
+    min-width: @width;
+    max-width: @width;
+}
+
+// Флекс. Блок по центру
+.block-center(@value: center) {
+    .flex-display();
+    .justify-content(@value);
+    .align-items(@value);
+}
+
+.placeholder(@value) {
+    &::-webkit-input-placeholder {
+        color: @value;
+    }
+
+    &::-moz-placeholder {
+        color: @value;
+    }
+
+    &:-ms-input-placeholder {
+        color: @value;
+    }
+}
+
+// миксин контента на страницах организации
+.mixinOrgContent() {
+    min-width: @minWidthContentOrg;
+    display: inline-block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 15px;
+
+    .scrollbar();
+}
+
+.multiline-text-max(@font-size, @line-height, @lines-to-show) {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    max-height: @font-size*@line-height*@lines-to-show;
+    margin: 0 auto;
+    font-size: @font-size;
+    line-height: @line-height;
+    -webkit-line-clamp: @lines-to-show;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mixinSelected() {
+    &:hover {
+        background: @bgSelection;
+    }
+}
+
+// Круглая иконка
+.mixinRoundIcon(@bg: #fff, @size: 29px) {
+    .block-center();
+
+    margin-top: -2px;
+    background: @bg;
+    width: @size;
+    height: @size;
+    box-shadow: 0 0 12px rgba(0,0,0, .2);
+    border-radius: 50%;
+}

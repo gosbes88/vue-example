@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .evalution-icon {
+                fill: #73af2e;
+            }
+        </style>
+    </defs>
+
+    <g>
+        <path class="evalution-icon" d="M18,24h6V7.5H18ZM0,24H6V12H0Zm9,0h6V0H9Z"/>
+    </g>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <style>
+            .error-1,
+            .error-2 {
+                fill: none;
+                stroke: #ccc;
+            }
+
+            .error-1 {
+                stroke-width: 7.5px;
+            }
+
+            .error-2 {
+                stroke-linecap: round;
+                stroke-width: 9.17px;
+            }
+        </style>
+    </defs>
+    <g>
+        <path class="error-1" d="M50,96.25A46.25,46.25,0,1,0,3.75,50,46.3,46.3,0,0,0,50,96.25Z"/>
+        <line class="error-2" x1="31.24" y1="31.24" x2="68.76" y2="68.76"/>
+        <line class="error-2" x1="68.77" y1="31.23" x2="31.23" y2="68.77"/>
+    </g>
+</svg>

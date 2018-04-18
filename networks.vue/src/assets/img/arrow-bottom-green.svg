@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6.65">
+    <defs>
+        <style>
+            .arrow-bottom-green {
+                fill: none;
+                stroke: #6fbd10;
+                stroke-linecap: round;
+                stroke-width: 2px;
+            }
+        </style>
+    </defs>
+
+    <g>
+        <polyline class="arrow-bottom-green" points="1 1 6 5.33 11 1"/>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.031 16.031">
+    <defs>
+        <style>
+            .change-account {
+                fill: #6fbe10;
+            }
+        </style>
+
+    </defs>
+        <path class="change-account" d="M13.031,8H9v4.031h4.031Zm6,12H15v4.031h4.031Zm-6,0H9v4.031h4.031Zm0-6H9v4.031h4.031Zm6,0H15v4.031h4.031ZM21,12.031h4.031V8H21ZM19.031,8H15v4.031h4.031Zm6,6H21v4.031h4.031Zm0,6H21v4.031h4.031Z"
+                          transform="translate(-9 -8)"/>
+</svg>

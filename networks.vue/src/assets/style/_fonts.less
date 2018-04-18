@@ -1,0 +1,34 @@
+// --------------------------------------------------
+// Import
+// Fonts
+// --------------------------------------------------
+.fontface(@family, @filename, @style:normal, @weight:normal) {
+    @font-face {
+        font-family: @family;
+        src:url('@{filename}.eot?#iefix') format('embedded-opentype'),
+        url('@{filename}.woff') format('woff'),
+        url('@{filename}.ttf') format('truetype');
+        font-weight: @weight;
+        font-style: @style;
+    }
+}
+
+@fontHelveticaRegular: "Helvetica", sans-serif;
+@fontHelveticaBold: "Helvetica Bold", sans-serif;
+@fontHelveticaMedium: "Helvetica Medium", sans-serif;
+@fontSegoeUI: "Segoe UI";
+
+// roboto
+@fontRobotoRegular: "Roboto Regular", sans-serif;
+@fontRobotoMedium: "Roboto Medium", sans-serif;
+@fontRobotoBold: "Roboto Bold", sans-serif;
+
+.fontface(@fontHelveticaRegular, "@{fonts}/helvetica-neue");
+.fontface(@fontHelveticaBold, "@{fonts}/helvetica-neue-bold");
+.fontface(@fontHelveticaMedium, "@{fonts}/helvetica-neue-medium");
+.fontface(@fontSegoeUI, "@{fonts}/segoe-ui-regular");
+
+// roboto
+.fontface(@fontRobotoRegular, "@{fonts}/roboto-regular");
+.fontface(@fontRobotoBold, "@{fonts}/roboto-bold");
+.fontface(@fontRobotoMedium, "@{fonts}/roboto-medium");
